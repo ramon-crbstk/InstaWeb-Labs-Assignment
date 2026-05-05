@@ -3,202 +3,105 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>assignment</title>
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      height: 125vh;
-    }
-    header {
-      padding: 0.1rem;
-      background-color: #333;
-      color: #fff;
-      text-align: center;
-    }
-    .builder {
-      display: flex;
-      flex: 1;
-      overflow: hidden;
-    }
-    .sidebar {
-      width: 100px;
-      padding: 1rem;
-      background: #f4f4f4;
-      border-right: 1px solid #ccc;
-    }
-    .canvas {
-      flex: 1;
-      padding: 1rem;
-      position: relative;
-      background: #fff;
-      border: 1px solid #ccc;
-  
-    }
-    .canvas-element {
-      position: absolute;
-      cursor: move;
-    }
-    .form {
-      padding: 1rem;
-      border-top: 1px solid #ccc;
-      background: #f9f9f9;
-    }
-    input, select {
-      width: 100%;
-      margin-bottom: 10px;
-      padding: 5px;
-    }
-    button {
-      /* width: 60%; */
-      padding: 8px;
-      background: #333;
-      color: white;
-      border: none;
-      margin-top: 10px;
-    }
-    button:hover{
-      background: #ff0000;
-      cursor: pointer;
-    }
-    @media (max-width: 600px) {
-      .builder {
-        flex-direction: column;
-      }
-      .sidebar {
-        width: 60%;
-        border-right: none;
-        border-bottom: 1px solid #ccc;
-      }
-      .center-button button{
-        width: 50%;
-      }
-      /* footer {
-      background-color: #979797;
-      color: #eee;
-      padding: 20px 40px;
-      text-align: center;
-      height: 10vh;
-    }
-
-    .footer h3 {
-      margin: 0;
-      font-size: 20px;
-    }
-
-    .footer p {
-      margin: 5px 0;
-      font-size: 14px;
-    } */
-
-
-
-    }
-  </style>
+  <meta name="description" content="Premium Gaming Café with PS5 and high-end PC stations. Book your slot now." />
+  <title>Neon Nexus Gaming Café | Level Up Your Game</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header>
-    <h1>Assignment</h1>
-  </header>
-  <div class="builder">
-    <div class="sidebar">
-      <button draggable="true" class="element-btn" data-type="text">Text</button>
-      <button draggable="true" class="element-btn" data-type="image">Image</button>
-      <button draggable="true" class="element-btn" data-type="button">Button</button>
+  <header class="navbar glass">
+  <a class="brand" href="index.html">Neon Nexus</a>
+  <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+  <nav class="nav-links glass" aria-label="Main navigation">
+    <a href="index.html">Home</a><a href="about.html">About</a><a href="games.html">Games & Pricing</a><a href="contact.html">Contact</a>
+    <div class="nav-utilities">
+      <input class="search-input" type="search" aria-label="Search games" placeholder="Search games..."/>
+      <button class="btn btn-alt" type="button">Login</button>
+      <button class="btn" type="button">Logout</button>
+      <div class="dropdown">
+        <button class="dropdown-toggle" type="button" aria-expanded="false">Account ▾</button>
+        <div class="dropdown-menu glass" role="menu">
+          <a href="#" role="menuitem">Profile Settings</a><a href="#" role="menuitem">Booking History</a><a href="#" role="menuitem">Help Center</a>
+        </div>
+      </div>
     </div>
-    <div class="canvas" id="canvas"></div>
-  </div>
-  <div class="form" id="form">
-    <h3>Edit Properties</h3>
-    <input type="text" id="propText" placeholder="Text or Image URL" />
-    <input type="number" id="propFontSize" placeholder="Font Size (px)" />
-    <input type="color" id="propColor" placeholder="Color" />
-  <div class="center-button">  <button onclick="applyChanges()">Apply</button></div>
-  </div>  
-  <div class="footerr">
-  <footer id="footer" class="footer">
-    <center><h3>Ramon Bakuri</h3>
-    <p>Email: ramonrbakuri@gmail.com | Phone: +91 84338 77879</p>
-   <p>Thank you for your time</p> </center>
-  </footer></div>
-  <script>
-    const canvas = document.getElementById("canvas");
-    let selectedElement = null;
+  </nav>
+</header>
 
-    document.querySelectorAll(".element-btn").forEach(btn => {
-      btn.addEventListener("dragstart", e => {
-        e.dataTransfer.setData("type", e.target.dataset.type);
-      });
-    });
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-overlay"></div>
+      <div class="container hero-content fade-in">
+        <h1>Level Up Your Game</h1>
+        <p>Premium PS5 & PC Gaming Experience</p>
+        <div class="cta-row">
+          <a href="#booking" class="btn">Book Now</a>
+          <a href="games.html" class="btn btn-alt">Explore Games</a>
+        </div>
+      </div>
+    </section>
 
-    canvas.addEventListener("dragover", e => {
-      e.preventDefault();
-    });
+    <section class="section container">
+      <h2>Why Gamers Choose Us</h2>
+      <div class="grid cards-4">
+        <article class="card glass"><h3>🎮 PS5 Gaming</h3><p>Latest titles with dual-sense immersion.</p></article>
+        <article class="card glass"><h3>🖥️ High-End PCs</h3><p>RTX-powered rigs for esports and streaming.</p></article>
+        <article class="card glass"><h3>⚡ Fast Internet</h3><p>Low-latency fiber for flawless matches.</p></article>
+        <article class="card glass"><h3>🛋️ Comfortable Setup</h3><p>Ergonomic seating and cool ambient lighting.</p></article>
+      </div>
+    </section>
 
-    canvas.addEventListener("drop", e => {
-      e.preventDefault();
-      const type = e.dataTransfer.getData("type");
-      let el;
+    <section class="section container split">
+      <img src="web-developer.jpg" loading="lazy" alt="Gaming station with RGB lighting" />
+      <div>
+        <h2>The Ultimate Experience</h2>
+        <p>Team up for multiplayer battles, train in a competitive environment, or relax in a chill late-night vibe with your squad.</p>
+      </div>
+    </section>
 
-      if (type === "text") {
-        el = document.createElement("div");
-        el.textContent = "Editable Text";
-      } else if (type === "image") {
-        el = document.createElement("img");
-        el.src = "./web-developer.jpg";
-        el.width = 120;
-      } else if (type === "button") {
-        el = document.createElement("button");
-        el.textContent = "Click Me";
-      }
+    <section class="section container" id="pricing">
+      <h2>Quick Pricing</h2>
+      <div class="grid cards-2">
+        <article class="card glass"><h3>PC Station</h3><p class="price">$6/hr</p></article>
+        <article class="card glass"><h3>PS5 Station</h3><p class="price">$8/hr</p></article>
+      </div>
+      <a href="games.html#pricing" class="btn">View Full Pricing</a>
+    </section>
 
-      el.classList.add("canvas-element");
-      el.style.top = e.offsetY + "px";
-      el.style.left = e.offsetX + "px";
-      el.setAttribute("draggable", true);
-      el.addEventListener("dragend", dragEnd);
-      el.addEventListener("click", () => {
-        selectedElement = el;
-        populateForm(el);
-      });
+    <section class="section container">
+      <h2>Gallery Preview</h2>
+      <div class="gallery-grid">
+        <img loading="lazy" src="web-developer.jpg" alt="PC battle setup" />
+        <img loading="lazy" src="web-developer.jpg" alt="PS5 controller and monitor" />
+        <img loading="lazy" src="web-developer.jpg" alt="Gaming room lights" />
+      </div>
+    </section>
 
-      canvas.appendChild(el);
-    });
+    <section class="section container">
+      <h2>What Players Say</h2>
+      <div class="grid cards-3">
+        <article class="card glass"><p>★★★★★ “Best setup in town for ranked grind.”</p><small>- Alex</small></article>
+        <article class="card glass"><p>★★★★★ “Perfect mix of competitive and cozy.”</p><small>- Mia</small></article>
+        <article class="card glass"><p>★★★★☆ “Great hosts and smooth bookings.”</p><small>- Jordan</small></article>
+      </div>
+    </section>
 
-    function dragEnd(e) {
-      e.target.style.top = e.offsetY + "px";
-      e.target.style.left = e.offsetX + "px";
-    }
-
-    function populateForm(el) {
-      document.getElementById("propText").value = el.textContent || el.src || "";
-      document.getElementById("propFontSize").value = parseInt(getComputedStyle(el).fontSize) || "";
-      document.getElementById("propColor").value = rgbToHex(getComputedStyle(el).color);
-    }
-
-    function applyChanges() {
-      if (!selectedElement) return;
-      const text = document.getElementById("propText").value;
-      const fontSize = document.getElementById("propFontSize").value;
-      const color = document.getElementById("propColor").value;
-
-      if (selectedElement.tagName === "IMG") {
-        selectedElement.src = text;
-      } else {
-        selectedElement.textContent = text;
-        selectedElement.style.color = color;
-      }
-      selectedElement.style.fontSize = fontSize + "px";
-    }
-
-    function rgbToHex(rgb) {
-      const result = rgb.match(/\d+/g).map(x => (+x).toString(16).padStart(2, '0'));
-      return `#${result.join('')}`;
-    }
-  </script>
+    <section class="section cta-banner" id="booking">
+      <div class="container">
+        <h2>Ready to Queue In?</h2>
+        <p>Reserve your station in under 60 seconds.</p>
+        <a href="contact.html" class="btn">Reserve Your Spot</a>
+        <a href="contact.html#visit" class="btn btn-alt">Visit Us Today</a>
+      </div>
+    </section>
+  </main>
+<footer class="site-footer glass">
+  <p>© 2026 Neon Nexus Gaming Café. All rights reserved.</p>
+  <p>Phone: +1 (555) 010-9090 · Email: play@neonnexus.gg</p>
+  <div class="footer-social"><a href="#" aria-label="Instagram">Instagram</a><a href="#" aria-label="YouTube">YouTube</a><a href="#" aria-label="X">X</a></div>
+</footer>
+<script src="script.js"></script>
 </body>
 </html>
